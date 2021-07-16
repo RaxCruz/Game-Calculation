@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.option_card {
+  transition: 0.5s ease-in-out;
+}
+.option_photo {
+  width: 160px;
+  height: 200px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.option_card:hover {
+  transform: translateY(20px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.option_photo::before {
+  content: "";
+  position: absolute;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(147, 174, 212, 0.6),
+    rgba(199, 193, 193, 0.7)
+  );
+  transition: all 0.5s;
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.option_photo:hover:before {
+  opacity: 1;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3,
+    0 0 120px #2196f3;
+}
+.option_photo img {
+  height: 100%;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.option_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, 10%);
+  transition: 0.5s all;
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option_photo:hover .option_button {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.gameWindow {
+  box-shadow: 0 0 10px rgba(160, 211, 160, 0.719),
+    0 0 40px rgba(160, 211, 160, 0.719), 0 0 80px #2196f3,
+    0 0 120px rgba(160, 211, 160, 0.719);
+}
+
+.answerInput {
+  background: #0f86337a;
+  border-radius: 1rem;
+  border: none;
+}
+input:focus {
+  outline: none;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(214, 171, 53, 0.719),
+    0 0 40px rgba(214, 171, 53, 0.719), 0 0 80px rgba(214, 131, 53, 0.719),
+    0 0 120px rgba(236, 109, 24, 0.719);
 }
