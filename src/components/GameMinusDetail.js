@@ -1,36 +1,41 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import AnswerForm from "./AnswerForm";
-const GameAddDetail = () => {
-  const [addNum, setAddNum] = useState({ add: "Start", round: 0, ans: 0 });
+
+const GameMinusDetail = () => {
+  const [minusNum, setMinusNum] = useState({ add: "Start", round: 0, ans: 0 });
   const [value, setValue] = useState("");
   const [isResult, setResult] = useState(false);
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
-  const ChangeAddNum = () => {
-    const nextAddNum = Math.floor(Math.random() * 100) + 1;
-    setAddNum({
-      add: nextAddNum,
-      round: addNum.round + 1,
-      ans: addNum.ans + nextAddNum,
+  const ChangeMinusNum = () => {
+    var nextMinusNum = 0;
+    if (minusNum.round === 0) {
+      nextMinusNum = Math.floor(Math.random() * 100) + 11;
+    } else nextMinusNum = -(Math.floor(Math.random() * 10) + 1);
+    setMinusNum({
+      add: nextMinusNum,
+      round: minusNum.round + 1,
+      ans: minusNum.ans + nextMinusNum,
     });
   };
 
   useEffect(() => {
-    if (addNum.round === 8) return;
+    if (minusNum.round === 8) return;
     const timer = setTimeout(() => {
-      ChangeAddNum();
+      ChangeMinusNum();
     }, 1500);
     return () => clearTimeout(timer);
-  }, [addNum.round]);
+  }, [minusNum.round]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     setResult(true);
   };
   const undoGame = () => {
-    setAddNum({
+    setMinusNum({
       add: "Start",
       round: 0,
       ans: 0,
@@ -38,27 +43,28 @@ const GameAddDetail = () => {
     setResult(false);
     setValue("");
   };
+
   if (isResult) {
     return (
       <div className="gameWindow absolute  w-2/4 h-2/4 bg-green-200  bg-gradient-to-tl bg-opacity-50 z-20 rounded-3xl">
         <div className="flex flex-col justify-center items-center h-full">
           <div id="p1" className="text-7xl font-mono font-bold">
-            {addNum.ans - addNum.add == value ? <>正確</> : <>失敗</>}
+            {minusNum.ans - minusNum.add == value ? <>正確</> : <>失敗</>}
           </div>
           <div className="mt-3 px-2 rounded-3xl border-blue-300 border-solid border-2">
             <button class="answerFormButton" onClick={undoGame} autoFocus>
               <p className="text-green-700 font-bold font-serif">重新</p>
             </button>
           </div>
-          <div className="mt-5 font-bold font-sans">
-            答案:{addNum.ans - addNum.add}
+          <div className="mt-5 text-lg font-bold font-mono">
+            答案:{minusNum.ans - minusNum.add}
           </div>
         </div>
       </div>
     );
   }
 
-  if (addNum.round === 8) {
+  if (minusNum.round === 8) {
     return (
       <div className="gameWindow absolute  w-2/4 h-2/4 bg-green-200  bg-gradient-to-tl bg-opacity-50 z-20 rounded-3xl">
         <div className="flex flex-col justify-center items-center h-full">
@@ -76,8 +82,11 @@ const GameAddDetail = () => {
     return (
       <div className="gameWindow absolute  w-2/4 h-2/4 bg-green-200  bg-gradient-to-tl bg-opacity-50 z-20 rounded-3xl">
         <div className="flex flex-col justify-center items-center h-full">
-          <div id="p1" className="text-7xl font-mono font-bold">
-            {addNum.add}
+          <div
+            id="p1"
+            className="animate-ChangeNum gameNumber text-7xl font-mono font-bold"
+          >
+            {minusNum.add}
           </div>
         </div>
       </div>
@@ -85,4 +94,4 @@ const GameAddDetail = () => {
   }
 };
 
-export default GameAddDetail;
+export default GameMinusDetail;

@@ -82,3 +82,6 @@ input:focus {
     0 0 40px rgba(214, 171, 53, 0.719), 0 0 80px rgba(214, 131, 53, 0.719),
     0 0 120px rgba(236, 109, 24, 0.719);
 }
+.answerFormButton:focus {
+  outline: none;
+}
