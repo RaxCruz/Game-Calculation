@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.925c5d2d.chunk.css",
-    "main.js": "/static/js/main.4e04200b.chunk.js",
-    "main.js.map": "/static/js/main.4e04200b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9b89de3f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9b89de3f.js.map",
-    "static/js/2.e37758fd.chunk.js": "/static/js/2.e37758fd.chunk.js",
-    "static/js/2.e37758fd.chunk.js.map": "/static/js/2.e37758fd.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.925c5d2d.chunk.css.map": "/static/css/main.925c5d2d.chunk.css.map",
-    "static/js/2.e37758fd.chunk.js.LICENSE.txt": "/static/js/2.e37758fd.chunk.js.LICENSE.txt"
+    "main.css": "/Game-Calculation/static/css/main.925c5d2d.chunk.css",
+    "main.js": "/Game-Calculation/static/js/main.eedd08d0.chunk.js",
+    "main.js.map": "/Game-Calculation/static/js/main.eedd08d0.chunk.js.map",
+    "runtime-main.js": "/Game-Calculation/static/js/runtime-main.a297885a.js",
+    "runtime-main.js.map": "/Game-Calculation/static/js/runtime-main.a297885a.js.map",
+    "static/js/2.e37758fd.chunk.js": "/Game-Calculation/static/js/2.e37758fd.chunk.js",
+    "static/js/2.e37758fd.chunk.js.map": "/Game-Calculation/static/js/2.e37758fd.chunk.js.map",
+    "index.html": "/Game-Calculation/index.html",
+    "static/css/main.925c5d2d.chunk.css.map": "/Game-Calculation/static/css/main.925c5d2d.chunk.css.map",
+    "static/js/2.e37758fd.chunk.js.LICENSE.txt": "/Game-Calculation/static/js/2.e37758fd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9b89de3f.js",
+    "static/js/runtime-main.a297885a.js",
     "static/js/2.e37758fd.chunk.js",
     "static/css/main.925c5d2d.chunk.css",
-    "static/js/main.4e04200b.chunk.js"
+    "static/js/main.eedd08d0.chunk.js"
   ]
 }
