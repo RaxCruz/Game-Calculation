@@ -11,7 +11,7 @@ import GameDivide from "./components/GameDivide";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="bg-indigo-900 relative overflow-hidden h-screen">
         <img
           src="https://www.tailwind-kit.com/images/landscape/6.svg"
