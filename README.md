@@ -16,4 +16,4 @@
 1. 新增段位選單, 使程度較高使用者可以依段位遊玩
 
 ## 開始遊玩
-Links[進入遊戲]()
+[進入遊戲](https://raxcruz.github.io/Game-Calculation/)
